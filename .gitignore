@@ -2,5 +2,5 @@
 /out
 .idea/
 TryCamel.iml
-#activemq-data/
-#target/
+activemq-data/
+target/
