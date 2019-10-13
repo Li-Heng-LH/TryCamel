@@ -21,6 +21,25 @@
 
         <route>
             <from ref="jmsIncomingOrders"/>
+            <choice>
+                <when>
+                    <simple>${header.CamelFileName} regex '^.*\.xml$'</simple>
+                    <to uri="jms:xmlOrders"/>
+                </when>
+                <when>
+                    <simple>${header.CamelFileName} regex '^.*\.(csv|csl)$'</simple>
+                    <to uri="jms:csvOrders"/>
+                </when>
+                <otherwise>
+                    <to uri="jms:badOrders"/>
+                    <stop/>
+                </otherwise>
+            </choice>
+            <to uri="jms:continuedProcessing"/>
+        </route>
+
+        <route>
+            <from uri="jms:continuedProcessing"/>
             <process ref="downloadLogger"/>
         </route>
 
