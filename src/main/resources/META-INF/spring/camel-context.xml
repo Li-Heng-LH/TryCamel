@@ -35,7 +35,17 @@
                     <stop/>
                 </otherwise>
             </choice>
-            <to uri="jms:continuedProcessing"/>
+            <!--if this final destination is enabled, all messages will still go to this final destination, including test-->
+            <!--from uri="jms:xmlOrders" route will then be called again separately-->
+            <!--<to uri="jms:continuedProcessing"/>-->
+        </route>
+
+        <route>
+            <from uri="jms:xmlOrders"/>
+            <filter>
+                <xpath>/order[not(@test)]</xpath>
+                <process ref="downloadLogger"/>
+            </filter>
         </route>
 
         <route>

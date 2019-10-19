@@ -8,6 +8,8 @@ import java.util.Map;
 public class DownloadLogger implements Processor {
 
     public void process(Exchange exchange) throws Exception {
+        System.out.println();
+
         System.out.println("We just downloaded: "
                 + exchange.getIn().getHeader("CamelFileName"));
 
