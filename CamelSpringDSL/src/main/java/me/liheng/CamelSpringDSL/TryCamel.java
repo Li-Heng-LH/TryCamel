@@ -1,4 +1,4 @@
-package com.me.TryCamel;
+package me.liheng.CamelSpringDSL;
 
 public class TryCamel {
 

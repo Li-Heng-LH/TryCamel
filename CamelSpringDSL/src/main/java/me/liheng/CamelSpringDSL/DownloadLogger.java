@@ -1,4 +1,4 @@
-package com.me.TryCamel;
+package me.liheng.CamelSpringDSL;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;

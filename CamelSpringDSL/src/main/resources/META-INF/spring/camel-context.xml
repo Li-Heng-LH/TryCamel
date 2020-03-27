@@ -8,7 +8,7 @@
 
     <import resource="jms-setup.xml"/>
 
-    <bean id="downloadLogger" class="com.me.TryCamel.DownloadLogger"/>
+    <bean id="downloadLogger" class="me.liheng.CamelSpringDSL.DownloadLogger"/>
 
     <camelContext xmlns="http://camel.apache.org/schema/spring">
 
