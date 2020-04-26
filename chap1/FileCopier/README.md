@@ -12,6 +12,7 @@
 * Much more complicated if need to set up timer or to keep track which files have been copied
 
 ##### Camel approach #####
-
+* Can run from IDE. 
+* Can also run `mvn compile exec:java`
 
 
